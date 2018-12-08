@@ -1,0 +1,12 @@
+(defun start-J-session ()
+    "Open J jconsole session."
+    (interactive)
+    (setq save-old explicit-shell-file-name)
+    (setq explicit-shell-file-name (concat base-disk "/utl/J64-804.bat"))
+    (setq shell-file-name "J804_64")
+    (setq explicit-shell-file-name (concat base-disk "/utl/J64-807.bat"))
+    (setq shell-file-name "J807_64")
+    (shell)
+    (setq explicit-shell-file-name save-old)
+)
+(define-key global-map "\C-c\C-j" 'start-J-session)
