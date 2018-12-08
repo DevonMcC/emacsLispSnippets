@@ -1,0 +1,10 @@
+(defun start-Git-session ()
+    "Open Git jconsole session."
+    (interactive)
+    (setq save-old explicit-shell-file-name)
+    (setq explicit-shell-file-name (concat base-disk "/utl/GitShell.bat"))
+    (setq shell-file-name "Git 1.9.2")
+    (shell)
+    (setq explicit-shell-file-name save-old)
+)
+(define-key global-map "\C-c\C-g" 'start-Git-session)
